@@ -25,5 +25,8 @@ public class App {
         // list.addLast(0);
 
         // System.out.println(LinkedListTest.getSum(list));
+
+        QueueTest queue = new QueueTest();
+        queue.queueTest(5, 3);
     }
 }
