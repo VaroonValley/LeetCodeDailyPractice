@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 public class App {
     public static void main(String[] args) throws Exception {
         String string = "{(1+2)+{(((8))+1})}";
@@ -26,7 +31,32 @@ public class App {
 
         // System.out.println(LinkedListTest.getSum(list));
 
-        QueueTest queue = new QueueTest();
-        queue.queueTest(5, 3);
+        // QueueTest queue = new QueueTest();
+        // queue.queueTest(5, 3);
+        List<Integer> list = new ArrayList<>();
+        BinaryTree tree = new BinaryTree();
+        tree.insert(1);
+        tree.insert(2);
+        tree.insert(3);
+        tree.insert(4);
+        tree.insert(5);
+
+        BinaryTree tree2 = new BinaryTree();
+        tree2.insert(1);
+        tree2.insert(2);
+        tree2.insert(3);
+        tree2.insert(4);
+        tree2.insert(5);
+
+        for(int i = 0; i < tree.size(); i++){
+            list.add(tree.nodeAt(i).get(0));
+        }
+        
+        for(int i = 0; i < tree2.size(); i++){
+            list.add(tree2.nodeAt(i).get(0));
+        }
+
+        Collections.sort(list);
+        System.out.println(list);
     }
 }
