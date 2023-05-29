@@ -8,11 +8,13 @@ public class App {
 
         //AVLTree
         AVLTree avl = new AVLTree();
-        avl.insert(9);
-        // avl.insert(2);
-        // avl.insert(3);
+        avl.insert(1);
+        avl.insert(2);
+        avl.insert(3);
         avl.insert(4);
-        System.out.println("True");
+        avl.insert(5);
+
+
         // String string = "{(1+2)+{(((8))+1})}";
         // Stacks stack = new Stacks();
         // if(stack.isBalanced(string)){

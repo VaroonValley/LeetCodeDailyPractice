@@ -1,3 +1,6 @@
+/**
+ * AVLTree
+ */
 public class AVLTree {
     private class AVLNode{
         private int height;
@@ -14,8 +17,7 @@ public class AVLTree {
     public void insert(int value){
         root = insert(root, value);
     }
-    private AVLNode insert(AVLNode root, int value) {
-        System.out.println();
+    private AVLNode insert(AVLNode root, int value){
         if(root == null){
             root = new AVLNode(value);
         }
@@ -26,29 +28,48 @@ public class AVLTree {
         if(value > root.value){
             root.rightChild = insert(root.rightChild, value);
         }
-        root.height = root.height + 1;
-        System.out.println("root " + root.value);
+        root.height = Math.max(height(root.leftChild), height(root.rightChild)) + 1;
+        
         root = rotate(root);
         return root;
     }
     
-    private int balance(AVLNode root) {
-        var lefh = root.leftChild == null ? 0 : root.leftChild.height;
-        var refh = root.rightChild ==null ? 0 : root.rightChild.height;
-        var x = lefh - refh;
-        return x;
+    private int height(AVLNode root){
+        return root == null ? 0 : root.height;
     }
-    
-    private AVLNode rotate(AVLNode root){
-        //rightrotate
-        if(balance(root) < -1){
-            root.rightChild.leftChild = new AVLNode(root.value);
-            root = root.rightChild;
+
+    private int isBalanced(AVLNode root) {
+        return height(root.leftChild) - height(root.rightChild);
+    }
+    private AVLNode rotate(AVLNode node) {
+        // AVLNode node = root;
+        if(isBalanced(node) < -1){
+            node = rotateLeft(node);
         }
-        if(balance(root) > 1){
-            root.leftChild.rightChild = new AVLNode(root.value);
-            root = root.leftChild;
+
+        if(isBalanced(node) > 1){
+            node = rotateRight(node);
         }
+        return node;
+    }
+    private AVLNode rotateLeft(AVLNode root){
+        AVLNode newRoot = root.rightChild;
+        root.rightChild = newRoot.leftChild;
+        newRoot.leftChild = root;
+        
+        root.height = Math.max(height(root.leftChild), height(root.rightChild)) + 1;
+        newRoot.height = Math.max(height(newRoot.leftChild), height(newRoot.rightChild)) + 1;
+        
+        
+        return newRoot;
+    }
+    private AVLNode rotateRight(AVLNode root){
+        AVLNode newRoot = root.leftChild;
+        root.leftChild = newRoot.rightChild;
+        newRoot.rightChild = root;
+
+        root.height = Math.max(height(root.leftChild), height(root.rightChild)) + 1;
+        newRoot.height = Math.max(height(newRoot.leftChild), height(newRoot.rightChild) + 1);
         return root;
     }
 }
