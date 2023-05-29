@@ -6,14 +6,24 @@ import java.util.List;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        //AVLTree
-        AVLTree avl = new AVLTree();
-        avl.insert(1);
-        avl.insert(2);
-        avl.insert(3);
-        avl.insert(4);
-        avl.insert(5);
+        // //AVLTree
+        // AVLTree avl = new AVLTree();
+        // avl.insert(1);
+        // avl.insert(2);
+        // avl.insert(3);
+        // avl.insert(4);
+        // avl.insert(5);
 
+        // Heap
+        Heap heap = new Heap();
+        heap.insert(21);
+        heap.insert(2);
+        heap.insert(4);
+        heap.insert(3);
+        heap.insert(50);
+        heap.print();
+        heap.getLastItem();
+        heap.getMax();
 
         // String string = "{(1+2)+{(((8))+1})}";
         // Stacks stack = new Stacks();
