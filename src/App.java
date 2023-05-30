@@ -14,16 +14,24 @@ public class App {
         // avl.insert(4);
         // avl.insert(5);
 
+        Trie tr = new Trie();
+        tr.insert("mom");
+        tr.insert("mother");
+        tr.insert("mobile");
+        tr.insert("mash");
+        tr.insert("milk");
+        System.out.println(tr.findWords("m"));
+
         // Heap
-        Heap heap = new Heap();
-        heap.insert(21);
-        heap.insert(2);
-        heap.insert(4);
-        heap.insert(3);
-        heap.insert(50);
-        heap.print();
-        heap.getLastItem();
-        heap.getMax();
+        // Heap heap = new Heap();
+        // heap.insert(21);
+        // heap.insert(2);
+        // heap.insert(4);
+        // heap.insert(3);
+        // heap.insert(50);
+        // heap.print();
+        // heap.getLastItem();
+        // heap.getMax();
 
         // String string = "{(1+2)+{(((8))+1})}";
         // Stacks stack = new Stacks();
