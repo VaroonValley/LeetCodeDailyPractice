@@ -5,6 +5,13 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        Hash hashMap = new Hash();
+        int[] arr = {1,2,2,3,4,4,4};
+        hashMap.insert(arr);
+        System.out.println("First repeated character : "+hash.firstRepeatedCharacter());
+        System.out.println("Non-repeated character : "+hash.nonRepeatedCharacter());
+        System.out.println("Most repeated character : "+hash.mostRepeatedCharacter());
+        System.out.println();
 
         // //AVLTree
         // AVLTree avl = new AVLTree();
@@ -14,13 +21,13 @@ public class App {
         // avl.insert(4);
         // avl.insert(5);
 
-        Trie tr = new Trie();
-        tr.insert("mom");
-        tr.insert("mother");
-        tr.insert("mobile");
-        tr.insert("mash");
-        tr.insert("milk");
-        System.out.println(tr.findWords("m"));
+        // Trie tr = new Trie();
+        // tr.insert("mom");
+        // tr.insert("mother");
+        // tr.insert("mobile");
+        // tr.insert("mash");
+        // tr.insert("milk");
+        // System.out.println(tr.findWords("m"));
 
         // Heap
         // Heap heap = new Heap();
